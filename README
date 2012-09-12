@@ -1,0 +1,13 @@
+Requirement:
+NuSMV
+
+This is solution to the classic Zebra Puzzle (http://en.wikipedia.org/wiki/Zebra_Puzzle) done by using NuSMV.
+
+To execute the NuSMV code, in your command line, just execute:
+<nusmv command> <nusmv code>
+
+For example, in my case, it is:
+NuSMV solution.smv
+
+You can also see my execution result at solution.txt file. To generate solution.txt, I executed:
+NuSMV solution.smv > solution.txt
