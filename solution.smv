@@ -1,0 +1,229 @@
+-- Please refer to http://en.wikipedia.org/wiki/Zebra_Puzzle
+
+MODULE main
+VAR
+	english : 1..5;
+	spaniard : 1..5;
+	ukrainian : 1..5;
+	norwegian : 1..5;
+	japanese : 1..5;
+
+	red_house : 1..5;
+	green_house : 1..5;
+	ivory_house : 1..5;
+	yellow_house : 1..5;
+	blue_house : 1..5;
+
+	dog_owner : 1..5;
+	snail_owner : 1..5;
+	horse_owner : 1..5;
+	fox_owner : 1..5;
+	zebra_owner : 1..5;
+
+	coffee_drinker : 1..5;
+	tea_drinker : 1..5;
+	milk_drinker : 1..5;
+	orange_drinker : 1..5;
+	water_drinker : 1..5;
+
+	old_gold_smoker : 1..5;
+	kools_smoker : 1..5;
+	chesterfields_smoker : 1..5;
+	lucky_strike_smoker : 1..5;
+	parliaments_smoker : 1..5;
+
+ASSIGN
+	init(english) := 1..5;
+	init(spaniard) := 1..5;
+	init(ukrainian) := 1..5;
+	init(norwegian) := 1..5;
+	init(japanese) := 1..5;
+
+	next(english) := 1..5;
+	next(spaniard) := 1..5;
+	next(ukrainian) := 1..5;
+	next(norwegian) := 1..5;
+	next(japanese) := 1..5;
+
+	init(red_house) := 1..5;
+	init(green_house) := 1..5;
+	init(ivory_house) := 1..5;
+	init(yellow_house) := 1..5;
+	init(blue_house) := 1..5;
+
+	next(red_house) := 1..5;
+	next(green_house) := 1..5;
+	next(ivory_house) := 1..5;
+	next(yellow_house) := 1..5;
+	next(blue_house) := 1..5;
+
+	init(dog_owner) := 1..5;
+	init(snail_owner) := 1..5;
+	init(horse_owner) := 1..5;	
+	init(fox_owner) := 1..5;	
+	init(zebra_owner) := 1..5;	
+	
+	next(dog_owner) := 1..5;
+	next(snail_owner) := 1..5;
+	next(horse_owner) := 1..5;
+	next(fox_owner) := 1..5;
+	next(zebra_owner) := 1..5;
+
+	init(coffee_drinker) := 1..5;
+	init(tea_drinker) := 1..5;
+	init(milk_drinker) := 1..5;
+	init(orange_drinker) := 1..5;
+	init(water_drinker) := 1..5;
+
+	next(coffee_drinker) := 1..5;
+	next(tea_drinker) := 1..5;
+	next(milk_drinker) := 1..5;
+	next(orange_drinker) := 1..5;
+	next(water_drinker) := 1..5;
+
+	init(old_gold_smoker) := 1..5;
+	init(kools_smoker) := 1..5;
+	init(chesterfields_smoker) := 1..5;
+	init(lucky_strike_smoker) := 1..5;
+	init(parliaments_smoker) := 1..5;
+
+	next(old_gold_smoker) := 1..5;
+	next(kools_smoker) := 1..5;
+	next(chesterfields_smoker) := 1..5;
+	next(lucky_strike_smoker) := 1..5;
+	next(parliaments_smoker) := 1..5;
+LTLSPEC
+	-- it is just to force SMV to show the counter example
+	G FALSE
+TRANS
+	english = red_house
+TRANS
+	spaniard = dog_owner
+TRANS
+	coffee_drinker = green_house
+TRANS
+	ukrainian = tea_drinker
+TRANS
+	green_house = ivory_house + 1
+TRANS
+	old_gold_smoker = snail_owner
+TRANS
+	kools_smoker = yellow_house
+TRANS
+	milk_drinker = 3
+TRANS
+	norwegian = 1
+TRANS
+	chesterfields_smoker = fox_owner + 1 | chesterfields_smoker = fox_owner - 1
+TRANS
+	kools_smoker = horse_owner + 1 | kools_smoker = horse_owner - 1
+TRANS
+	lucky_strike_smoker = orange_drinker
+TRANS
+	japanese = parliaments_smoker
+TRANS
+	norwegian = blue_house + 1 | norwegian = blue_house - 1
+
+-- the rest here are just rubbish to prevent the same values from appearing twice
+ 
+TRANS
+	spaniard != english
+TRANS
+	green_house != red_house
+TRANS
+	snail_owner != dog_owner
+TRANS
+	tea_drinker != coffee_drinker
+TRANS
+	kools_smoker != old_gold_smoker
+TRANS
+	ukrainian != english
+TRANS
+	ivory_house != red_house
+TRANS
+	horse_owner != dog_owner
+TRANS
+	milk_drinker != coffee_drinker
+TRANS
+	chesterfields_smoker != old_gold_smoker
+TRANS
+	ukrainian != spaniard
+TRANS
+	ivory_house != green_house
+TRANS
+	horse_owner != snail_owner
+TRANS
+	milk_drinker != tea_drinker
+TRANS
+	chesterfields_smoker != kools_smoker
+TRANS
+	norwegian != english
+TRANS
+	yellow_house != red_house
+TRANS
+	fox_owner != dog_owner
+TRANS
+	orange_drinker != coffee_drinker
+TRANS
+	lucky_strike_smoker != old_gold_smoker
+TRANS
+	norwegian != spaniard
+TRANS
+	yellow_house != green_house
+TRANS
+	fox_owner != snail_owner
+TRANS
+	orange_drinker != tea_drinker
+TRANS
+	lucky_strike_smoker != kools_smoker
+TRANS
+	norwegian != ukrainian
+TRANS
+	yellow_house != ivory_house
+TRANS
+	fox_owner != horse_owner
+TRANS
+	orange_drinker != milk_drinker
+TRANS
+	lucky_strike_smoker != chesterfields_smoker
+TRANS
+	japanese != english
+TRANS
+	blue_house != red_house
+TRANS
+	zebra_owner != dog_owner
+TRANS
+	water_drinker != coffee_drinker
+TRANS
+	parliaments_smoker != old_gold_smoker
+TRANS
+	japanese != spaniard
+TRANS
+	blue_house != green_house
+TRANS
+	zebra_owner != snail_owner
+TRANS
+	water_drinker != tea_drinker
+TRANS
+	parliaments_smoker != kools_smoker
+TRANS
+	japanese != ukrainian
+TRANS
+	blue_house != ivory_house
+TRANS
+	zebra_owner != horse_owner
+TRANS
+	water_drinker != milk_drinker
+TRANS
+	parliaments_smoker != chesterfields_smoker
+TRANS
+	japanese != norwegian
+TRANS
+	blue_house != yellow_house
+TRANS
+	zebra_owner != fox_owner
+TRANS
+	water_drinker != orange_drinker
+TRANS
+	parliaments_smoker != lucky_strike_smoker
+
