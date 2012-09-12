@@ -1,0 +1,57 @@
+*** This is NuSMV 2.5.4 (compiled on Fri Oct 28 13:48:41 UTC 2011)
+*** Enabled addons are: compass 
+*** For more information on NuSMV see <http://nusmv.fbk.eu>
+*** or email to <nusmv-users@list.fbk.eu>.
+*** Please report bugs to <nusmv-users@fbk.eu>
+
+*** Copyright (c) 2010, Fondazione Bruno Kessler
+
+*** This version of NuSMV is linked to the CUDD library version 2.4.1
+*** Copyright (c) 1995-2004, Regents of the University of Colorado
+
+*** This version of NuSMV is linked to the MiniSat SAT solver. 
+*** See http://www.cs.chalmers.se/Cs/Research/FormalMethods/MiniSat
+*** Copyright (c) 2003-2005, Niklas Een, Niklas Sorensson 
+
+WARNING *** This version of NuSMV is linked to the zchaff SAT         ***
+WARNING *** solver (see http://www.princeton.edu/~chaff/zchaff.html). ***
+WARNING *** Zchaff is used in Bounded Model Checking when the         ***
+WARNING *** system variable "sat_solver" is set to "zchaff".          ***
+WARNING *** Notice that zchaff is for non-commercial purposes only.   ***
+WARNING *** NO COMMERCIAL USE OF ZCHAFF IS ALLOWED WITHOUT WRITTEN    ***
+WARNING *** PERMISSION FROM PRINCETON UNIVERSITY.                     ***
+WARNING *** Please contact Sharad Malik (malik@ee.princeton.edu)      ***
+WARNING *** for details.                                              ***
+
+-- specification  G FALSE  is false
+-- as demonstrated by the following execution sequence
+Trace Description: LTL Counterexample 
+Trace Type: Counterexample 
+-- Loop starts here
+-> State: 1.1 <-
+  english = 3
+  spaniard = 4
+  ukrainian = 2
+  norwegian = 1
+  japanese = 5
+  red_house = 3
+  green_house = 5
+  ivory_house = 4
+  yellow_house = 1
+  blue_house = 2
+  dog_owner = 4
+  snail_owner = 3
+  horse_owner = 2
+  fox_owner = 1
+  zebra_owner = 5
+  coffee_drinker = 5
+  tea_drinker = 2
+  milk_drinker = 3
+  orange_drinker = 4
+  water_drinker = 1
+  old_gold_smoker = 3
+  kools_smoker = 1
+  chesterfields_smoker = 2
+  lucky_strike_smoker = 4
+  parliaments_smoker = 5
+-> State: 1.2 <-
